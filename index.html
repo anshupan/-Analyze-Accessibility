@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A11y Auditor - Accessibility Checker Tool</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="light-mode">
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-universal-access"></i>
+                    <h1>Accessibility Checker</h1>
+                </div>
+                <div class="header-actions">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="download-btn" id="downloadBtn" aria-label="Download report">
+                        <i class="fas fa-download"></i>
+                        <span>Download Report</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Left Panel - HTML Input -->
+            <div class="input-panel">
+                <div class="panel-header">
+                    <h2><i class="fas fa-code"></i> HTML Code</h2>
+                    <div class="panel-actions">
+                        <button class="clear-btn" id="clearBtn" aria-label="Clear code">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                        <button class="sample-btn" id="sampleBtn" aria-label="Load sample code">
+                            <i class="fas fa-file-code"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="code-editor">
+                    <textarea 
+                        id="htmlInput" 
+                        placeholder="Paste your HTML code here...&#10;&#10;Example:&#10;&lt;div&gt;&#10;  &lt;img src=&quot;image.jpg&quot;&gt;&#10;  &lt;button&gt;Click here&lt;/button&gt;&#10;&lt;/div&gt;"
+                        spellcheck="false"
+                        aria-label="HTML code input area"
+                    ></textarea>
+                </div>
+                <button class="analyze-btn" id="analyzeBtn">
+                    <i class="fas fa-search"></i>
+                    Analyze Accessibility
+                </button>
+            </div>
+
+            <!-- Right Panel - Results -->
+            <div class="results-panel">
+                <div class="panel-header">
+                    <h2><i class="fas fa-clipboard-check"></i> Analysis Results</h2>
+                    <div class="results-summary" id="resultsSummary">
+                        <span class="status-badge" id="statusBadge">
+                            <i class="fas fa-info-circle"></i>
+                            Ready to analyze
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="results-content" id="resultsContent">
+                    <div class="welcome-state">
+                        <div class="welcome-icon">
+                            <i class="fas fa-hand-peace"></i>
+                        </div>
+                        <h3>Ready to check your code?</h3>
+                        <p>Paste your HTML code on the left and click "Analyze Accessibility" to get started!</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Built for your better work</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
